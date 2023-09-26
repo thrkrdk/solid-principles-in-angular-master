@@ -1,5 +1,4 @@
-import { Component } from "@angular/core";
-import { ExporterService } from "../exporter.service";
+import { Component, Input } from "@angular/core"; 
 
 @Component({
   selector: "app-widget",
@@ -9,11 +8,21 @@ import { ExporterService } from "../exporter.service";
       <button mat-stroked-button (click)="onExport()">Dışa Aktar</button>
     </div>
     <mat-divider></mat-divider>
-    <h5>Sıcaklık</h5>
+    <ng-container *ngIf="widget ==='wether'">
+    <h5>Güncel</h5>
     <section class="wether-widget">
       <mat-icon class="widget-icon">wb_sunny</mat-icon>
       <div class="value">+25</div>
     </section>
+    </ng-container>
+    <ng-container *ngIf="widget ==='velocity'">
+    <h5>Son Hız</h5>
+    <section class="wether-widget">
+      <mat-icon class="widget-icon">assessment</mat-icon> 
+      <div class="value">Planlanan: <strong>25</strong></div>
+      <div class="value">Ulaşılan: <strong>40</strong></div>
+    </section>
+    </ng-container>
   `,
   styles: [
     `
@@ -48,12 +57,15 @@ import { ExporterService } from "../exporter.service";
         opacity: 0.7;
       }
     `,
-  ],
+  ]
 })
 export class WidgetComponent {
   // exporterSevice = inject(ExporterService) ;
-  constructor(private exporterSevice: ExporterService) {}
+
+  @Input()
+  widget: "wether" | "velocity" = "wether";
+ 
   onExport() {
-    this.exporterSevice.export();
+    console.log('Buraya logic yazılacak.')
   }
 }
