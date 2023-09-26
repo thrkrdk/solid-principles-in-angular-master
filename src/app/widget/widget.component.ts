@@ -1,15 +1,7 @@
-import { Component, Injectable } from "@angular/core";
+import { AfterContentInit, Component, ContentChild } from "@angular/core";
 import { WidgetBase } from "./widget-base";
-
-class AnotherPolling {
-  
-}
-
-@Injectable({
-  providedIn: "root",
-  useClass: AnotherPolling,
-})
-export class PollingService {}
+import { Reloadable } from "./widget-content";
+import { RELOADABLE_CONTENT } from "./widget-content.token";
 
 @Component({
   selector: "app-widget",
@@ -40,16 +32,12 @@ export class PollingService {}
     `,
   ],
 })
-export class WidgetComponent extends WidgetBase {
-  /*
-  onExport(): void {
-      throw Error('Exportu desteklemiyorum.');
-  }
-  */
-  onExport(): void {
-    super.onExport();
-  }
-  constructor(private pollingService: PollingService){
-    super();
+export class WidgetComponent extends WidgetBase implements AfterContentInit {
+  @ContentChild(RELOADABLE_CONTENT)
+  content?: Reloadable;
+  ngAfterContentInit(): void {
+    if (this.content) {
+      this.content.reload();
+    }
   }
 }
