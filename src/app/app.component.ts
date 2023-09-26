@@ -8,9 +8,9 @@ import { Component } from "@angular/core";
     </mat-toolbar>
 
     <main class="content">
-      <app-widget><app-wether-content></app-wether-content></app-widget>
-      <app-widget><app-velocity-content></app-velocity-content></app-widget>
-      <app-widget><p>New Content Is Comming...</p></app-widget>
+      <app-widget title="Hava Durumu"><app-wether-content></app-wether-content></app-widget>
+      <app-widget title="Hız"><app-velocity-content></app-velocity-content></app-widget>
+      <app-widget title="Yeni Witget"><p>Yeni İçerik Geliyor...</p></app-widget>
     </main>
   `,
   styles: [

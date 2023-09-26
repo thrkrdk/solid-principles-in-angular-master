@@ -1,10 +1,10 @@
-import { Component, Input } from "@angular/core"; 
+import { Component, Input } from "@angular/core";
 
 @Component({
   selector: "app-widget",
   template: `
     <div class="header">
-      <h1>Hava Durumu</h1>
+      <h1>{{title}}</h1>
       <button mat-stroked-button (click)="onExport()">Dışa Aktar</button>
     </div>
     <mat-divider></mat-divider>
@@ -26,13 +26,14 @@ import { Component, Input } from "@angular/core";
         align-items: center;
         justify-content: space-between;
       }
-
     `,
-  ]
+  ],
 })
 export class WidgetComponent {
+  @Input()
+  title: string = "";
   // exporterSevice = inject(ExporterService) ;
   onExport() {
-    console.log('Buraya logic yazılacak.')
+    console.log("Buraya logic yazılacak.");
   }
 }
