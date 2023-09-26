@@ -1,12 +1,12 @@
-# SolidPrinciplesInAngular
+# Solid Principles In Angular
+The SOLID principles were introduced by Robert C. Martin in his 2000 paper “Design Principles and Design Patterns.” These concepts were later built upon by Michael Feathers, who introduced us to the SOLID acronym. And in the last 20 years, these five principles have revolutionized the world of object-oriented programming, changing the way that we write software.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.3.
+So, what is SOLID and how does it help us write better code? Simply put, Martin and Feathers’ design principles encourage us to create more maintainable, understandable, and flexible software. Consequently, as our applications grow in size, we can reduce their complexity and save ourselves a lot of headaches further down the road!
 
-## Development server
+The following five concepts make up our SOLID principles:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## How to use
-
-This project has 5 branches where every branch has implementation of some certain design principle.
-Please visit [This video tutorial](https://youtu.be/Y-MRJ9QYCvI) to see better explenation of SOLID principles.
+Single Responsibility
+Open/Closed
+Liskov Substitution
+Interface Segregation
+Dependency Inversion
