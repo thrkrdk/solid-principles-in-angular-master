@@ -1,8 +1,13 @@
-import { Component } from "@angular/core";
+import { Component, Injectable } from "@angular/core";
 import { WidgetBase } from "./widget-base";
+
+class AnotherPolling {
+  
+}
 
 @Injectable({
   providedIn: "root",
+  useClass: AnotherPolling,
 })
 export class PollingService {}
 
