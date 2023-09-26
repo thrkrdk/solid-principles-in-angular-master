@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
   selector: "app-root",
@@ -8,8 +8,9 @@ import { Component } from '@angular/core';
     </mat-toolbar>
 
     <main class="content">
-      <app-widget widget="wether"></app-widget>
-      <app-widget widget="velocity"></app-widget>
+      <app-widget><app-wether-content></app-wether-content></app-widget>
+      <app-widget><app-velocity-content></app-velocity-content></app-widget>
+      <app-widget><p>New Content Is Comming...</p></app-widget>
     </main>
   `,
   styles: [
@@ -23,10 +24,7 @@ import { Component } from '@angular/core';
         justify-content: center;
         align-items: center;
       }
-      
     `,
   ],
 })
-export class AppComponent {
-
-}
+export class AppComponent {}

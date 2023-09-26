@@ -9,11 +9,13 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
-import { WidgetComponent } from './widget/widget.component'; 
+import { WidgetComponent } from './widget/widget.component';
+import { WetherContentComponent } from './widget/wether-content.component';
+import { VelocityContentComponent } from './widget/velocity-content.component'; 
 
 
 @NgModule({
-  declarations: [AppComponent, WidgetComponent],
+  declarations: [AppComponent, WidgetComponent, WetherContentComponent, VelocityContentComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
