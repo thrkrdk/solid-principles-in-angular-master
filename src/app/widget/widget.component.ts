@@ -1,4 +1,5 @@
-import { Component, Input } from "@angular/core";
+import { Component } from "@angular/core";
+import { WidgetBase } from "./widget-base";
 
 @Component({
   selector: "app-widget",
@@ -29,11 +30,13 @@ import { Component, Input } from "@angular/core";
     `,
   ],
 })
-export class WidgetComponent {
-  @Input()
-  title: string = "";
-  // exporterSevice = inject(ExporterService) ;
-  onExport() {
-    console.log("Buraya logic yazılacak.");
+export class WidgetComponent extends WidgetBase{
+  /*
+  onExport(): void {
+      throw Error('Exportu desteklemiyorum.');
   }
+  */
+  onExport(): void {
+    super.onExport();
+}
 }

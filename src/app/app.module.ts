@@ -11,7 +11,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { WidgetComponent } from './widget/widget.component';
 import { WetherContentComponent } from './widget/wether-content.component';
-import { VelocityContentComponent } from './widget/velocity-content.component'; 
+import { VelocityContentComponent } from './widget/velocity-content.component';
 
 
 @NgModule({
