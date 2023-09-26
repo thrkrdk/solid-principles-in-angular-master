@@ -1,11 +1,16 @@
 import { Component } from "@angular/core";
 import { WidgetBase } from "./widget-base";
 
+@Injectable({
+  providedIn: "root",
+})
+export class PollingService {}
+
 @Component({
   selector: "app-widget",
   template: `
     <div class="header">
-      <h1>{{title}}</h1>
+      <h1>{{ title }}</h1>
       <button mat-stroked-button (click)="onExport()">Dışa Aktar</button>
     </div>
     <mat-divider></mat-divider>
@@ -30,7 +35,7 @@ import { WidgetBase } from "./widget-base";
     `,
   ],
 })
-export class WidgetComponent extends WidgetBase{
+export class WidgetComponent extends WidgetBase {
   /*
   onExport(): void {
       throw Error('Exportu desteklemiyorum.');
@@ -38,5 +43,8 @@ export class WidgetComponent extends WidgetBase{
   */
   onExport(): void {
     super.onExport();
-}
+  }
+  constructor(private pollingService: PollingService){
+    super();
+  }
 }
